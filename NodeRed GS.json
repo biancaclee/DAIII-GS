@@ -1,0 +1,396 @@
+[
+    {
+        "id": "11165f0e7f127cb6",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "187fc1123f722f9d",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "02d8f15a13839f57",
+        "type": "ui_group",
+        "name": "Vagas",
+        "tab": "",
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "84d3d0677b3d400f",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "f1598d8e9a10cbe4",
+        "type": "ui_tab",
+        "name": "SwitchVagas",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "fec40fe511f50fb4",
+        "type": "ui_group",
+        "name": "Vagas Disponíveis",
+        "tab": "f1598d8e9a10cbe4",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2654b8f4d740dbf0",
+        "type": "aedes broker",
+        "z": "11165f0e7f127cb6",
+        "name": "Servidor",
+        "mqtt_port": 1883,
+        "mqtt_ws_bind": "port",
+        "mqtt_ws_port": "",
+        "mqtt_ws_path": "",
+        "cert": "",
+        "key": "",
+        "certname": "",
+        "keyname": "",
+        "dburl": "",
+        "usetls": false,
+        "x": 660,
+        "y": 260,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "5cc8af7d2fd2a62b",
+        "type": "mqtt in",
+        "z": "11165f0e7f127cb6",
+        "name": "subscriberEstacionamento",
+        "topic": "estacionamento",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "187fc1123f722f9d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 410,
+        "y": 500,
+        "wires": [
+            [
+                "8beb35ede0e52c19",
+                "69b961c65cde73de",
+                "94032ecce2cc310e"
+            ]
+        ]
+    },
+    {
+        "id": "69083e765e30f235",
+        "type": "mqtt out",
+        "z": "11165f0e7f127cb6",
+        "name": "",
+        "topic": "estacionamento",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "187fc1123f722f9d",
+        "x": 960,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "8beb35ede0e52c19",
+        "type": "debug",
+        "z": "11165f0e7f127cb6",
+        "name": "Subscriber",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "d44e21e3afb7969c",
+        "type": "inject",
+        "z": "11165f0e7f127cb6",
+        "name": "VagaA&B",
+        "props": [
+            {
+                "p": "payload.VagaA",
+                "v": "true",
+                "vt": "bool"
+            },
+            {
+                "p": "payload.VagaB",
+                "v": "true",
+                "vt": "bool"
+            },
+            {
+                "p": "payload.resultado",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "p": "payload.resultadoVagaA",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "p": "payload.resultadoVagaB",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 280,
+        "y": 360,
+        "wires": [
+            [
+                "8fb7f7a7c9eb70e1"
+            ]
+        ]
+    },
+    {
+        "id": "8fb7f7a7c9eb70e1",
+        "type": "function",
+        "z": "11165f0e7f127cb6",
+        "name": "VagasDisponíveis",
+        "func": "if (msg.payload.VagaA == true && msg.payload.VagaB == true)\n{\n    msg.payload.resultado = \"AB\";\n}\nif (msg.payload.VagaA == false && msg.payload.VagaB == true) {\n    msg.payload.resultado = \"B\";\n}\nif (msg.payload.VagaA == true && msg.payload.VagaB == false) {\n    msg.payload.resultado = \"A\";\n}\nif (msg.payload.VagaA == false && msg.payload.VagaB == false) {\n    msg.payload.resultado = \"X\";\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 360,
+        "wires": [
+            [
+                "69083e765e30f235"
+            ]
+        ]
+    },
+    {
+        "id": "69b961c65cde73de",
+        "type": "ui_text",
+        "z": "11165f0e7f127cb6",
+        "group": "fec40fe511f50fb4",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "vaga disponível: ",
+        "format": "{{msg.payload.resultado}}",
+        "layout": "row-center",
+        "className": "",
+        "x": 700,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "94032ecce2cc310e",
+        "type": "function",
+        "z": "11165f0e7f127cb6",
+        "name": "SwitchVagas",
+        "func": "if (msg.payload.VagaA == true) {\n    msg.payload.resultadoVagaA = \"Vaga disponível\";\n}\nelse{\n    msg.payload.resultadoVagaA = \"Vaga indisponível\";\n}\nif (msg.payload.VagaB == true) {\n    msg.payload.resultadoVagaB = \"Vaga disponível\";\n}\nelse {\n    msg.payload.resultadoVagaB = \"Vaga indisponível\";\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 600,
+        "wires": [
+            [
+                "c1e33cb386f30950",
+                "6a7332deb6eefefd"
+            ]
+        ]
+    },
+    {
+        "id": "c1e33cb386f30950",
+        "type": "ui_text",
+        "z": "11165f0e7f127cb6",
+        "group": "fec40fe511f50fb4",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "vaga A: ",
+        "format": "{{msg.payload.resultadoVagaA}}",
+        "layout": "row-left",
+        "className": "",
+        "x": 880,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "6a7332deb6eefefd",
+        "type": "ui_text",
+        "z": "11165f0e7f127cb6",
+        "group": "fec40fe511f50fb4",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "vaga B: ",
+        "format": "{{msg.payload.resultadoVagaB}}",
+        "layout": "row-left",
+        "className": "",
+        "x": 880,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "5a66bc45816556ae",
+        "type": "ui_text",
+        "z": "11165f0e7f127cb6",
+        "group": "fec40fe511f50fb4",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "Vazio",
+        "label": "",
+        "format": "{{}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 710,
+        "y": 660,
+        "wires": []
+    }
+]
